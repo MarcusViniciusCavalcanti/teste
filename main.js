@@ -2,8 +2,12 @@ var electron = require('electron');
 var app = require('app');
 var BrowserWindow = require('browser-window');
 
+// loader do banco
+var dbFile = path.join(app.getAppPath(), 'app', 'db', 'database.db')
+
 // referência global para manter a instância da janela até que sejam fechadas pelo usuário então ele irá ser fechado quando o JavaScript fizer Garbage collection
 var mainWindow = null;
+
 
 // Sair da aplicação quando todas as janelas forem fechadas
 app.on('window-all-closed', function() {
